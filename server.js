@@ -28,7 +28,7 @@ app.get("/api/timestamp/:date_string?", (req, res) => {
   let date;
   if(!dateString) {date = new Date()
                   } else if (dateString.match(/^[0-9]+$/) != null) {
-    date = new Date(parseInt(dateString) * 1000);
+    date = new Date(parseInt(dateString));
   }else if (! isNaN(new Date(dateString).getTime())){
     date = new Date(dateString);
   }
